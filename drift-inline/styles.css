@@ -1,0 +1,94 @@
+/* Drift Inline — inline diff styling */
+
+/* Added text (present in the new document) */
+.di-added {
+	background-color: rgba(46, 160, 67, 0.28);
+	border-radius: 2px;
+}
+.di-added-line {
+	background-color: rgba(46, 160, 67, 0.10);
+}
+
+/* Removed lines (not in the document — rendered as widgets) */
+.di-deleted-line {
+	background-color: rgba(248, 81, 73, 0.16);
+	color: var(--text-muted);
+	text-decoration: line-through;
+	text-decoration-color: rgba(248, 81, 73, 0.7);
+	border-left: 3px solid rgba(248, 81, 73, 0.8);
+	padding: 0 6px;
+	margin: 0;
+	white-space: pre-wrap;
+	font-family: var(--font-text);
+	line-height: var(--line-height-normal);
+}
+
+/* Floating accept/reject controls above the first change */
+.di-controls {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 6px 8px;
+	margin: 4px 0;
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	box-shadow: var(--shadow-s);
+	position: sticky;
+	top: 4px;
+	z-index: 5;
+}
+.di-controls-label {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+	font-weight: 600;
+}
+/* Push the accept/reject buttons to the right-hand side. */
+.di-btn-group {
+	margin-left: auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* Global (top) bar vs per-hunk bar */
+.di-global-controls {
+	border-color: var(--interactive-accent);
+}
+.di-hunk-controls {
+	padding: 3px 6px;
+	background: var(--background-primary-alt);
+	box-shadow: none;
+	position: static;
+}
+.di-hunk-controls .di-controls-label {
+	font-weight: 500;
+	opacity: 0.85;
+}
+.di-hunk-controls .di-btn {
+	padding: 1px 8px;
+}
+.di-btn {
+	font-size: var(--font-ui-smaller);
+	padding: 3px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	border: 1px solid var(--background-modifier-border);
+}
+.di-accept {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+.di-accept:hover {
+	background: var(--interactive-accent-hover);
+}
+.di-reject {
+	background: var(--background-primary);
+	color: var(--text-error);
+}
+.di-reject:hover {
+	background: var(--background-modifier-error-hover);
+}
