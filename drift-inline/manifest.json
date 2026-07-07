@@ -1,7 +1,7 @@
 {
 	"id": "drift-inline",
 	"name": "Drift Inline",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"minAppVersion": "1.7.2",
 	"description": "Cursor-style inline diffs for external edits (Claudian, Claude Sidebar, or any tool). Review AI changes inline with Accept / Reject.",
 	"author": "Built with Claudian",
