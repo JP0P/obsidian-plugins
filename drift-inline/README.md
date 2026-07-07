@@ -25,8 +25,23 @@ write and overlays a reviewable diff on the affected note.
 - **Per-hunk Accept / Reject** — resolve each change independently, plus
   **Accept all / Reject all**. Resolving one change never disturbs the others,
   and bulk actions only affect changes still pending (matches Cursor / VS Code).
-- **Commands** — `Accept all changes`, `Reject all changes`,
-  `Toggle external change detection` (assign hotkeys in Settings → Hotkeys).
+- **Commands** — `Accept all inline changes`, `Reject all inline changes`,
+  `Toggle inline diff detection` (assign hotkeys in Settings → Hotkeys). Names are
+  deliberately unique so they don't clash with the original Drift plugin.
+
+## Quick start
+
+1. Install (see [Install](#install)) and enable **Drift Inline**.
+2. Let an AI tool (or any external program) edit one of your notes.
+3. The changes appear inline — green additions, red strikethrough deletions —
+   with **Accept ✓ / Reject ✗** on each change and a bar at the top for all of them.
+4. That's it. The defaults already ignore Obsidian's own edits (daily notes,
+   templates), so you're only asked about edits that actually came from outside.
+
+## Requirements
+
+- Obsidian **1.7.2+**, **desktop** (Windows / macOS / Linux). Mobile is not
+  supported (the plugin uses the desktop editor internals).
 
 ## Configuration — what triggers a diff (v0.3.0)
 
@@ -78,14 +93,17 @@ Then reload plugins and enable **Drift Inline** in Settings → Community Plugin
 > external changes and will conflict. Drift Inline warns you on load if it detects
 > Drift is also enabled.
 
-## Known limitations (v0.2.3)
+## Known limitations
 
 - Inline overlay requires the file to be **open** in an editor; changes to
   background files raise a notice to open-and-review.
 - Pending diffs are held **in memory** (not persisted across restart).
 - **Line-level** diff (no intra-line/word-level highlighting yet).
+- The two terminal-based AI tools (Claudian, Claude Sidebar) can't be told apart
+  from each other — both are seen as external edits.
 - Desktop only.
 
 ## Status
 
-Prototype (v0.2.3). Built collaboratively inside the vault with Claudian.
+Working prototype (**v0.3.3**), cross-platform (Windows / macOS / Linux desktop).
+Built collaboratively inside the vault with Claudian.
