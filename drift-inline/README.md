@@ -18,8 +18,8 @@ write and overlays a reviewable diff on the affected note.
 
 ## Features
 
-- **Source-agnostic detection** — triggers on any tool that writes markdown to
-  disk (Claudian, Claude Sidebar, sync, scripts).
+- **Detection** — triggers on tools that change your notes (Claudian, Claude
+  Sidebar, sync, scripts), with configurable filtering (see Configuration).
 - **Inline rendering** — added lines highlighted green; removed lines shown as
   red strikethrough widgets; a control bar above the first change.
 - **Per-hunk Accept / Reject** — resolve each change independently, plus
@@ -27,7 +27,29 @@ write and overlays a reviewable diff on the affected note.
   and bulk actions only affect changes still pending (matches Cursor / VS Code).
 - **Commands** — `Accept all changes`, `Reject all changes`,
   `Toggle external change detection` (assign hotkeys in Settings → Hotkeys).
-- **Settings** — enable/disable detection; notify when a non-open file changes.
+
+## Configuration — what triggers a diff (v0.3.0)
+
+Changes are classified as **internal** (made by Obsidian itself — the daily-note
+button, templates, rollover-daily-todos, etc.) or **external** (a CLI tool such
+as Claudian / Claude Sidebar, or sync). Internal writes are detected by
+instrumenting the vault API and attributed to a plugin via the call stack.
+
+Default policy: **diff external changes, ignore internal ones** — so the
+daily-note button no longer prompts, while AI edits still do. On top of that:
+
+- **Plugin allow-list / block-list** (by plugin id, for internal writes). The
+  allow-list defaults to `claudian` so its non-CLI (`vault.process`) writes also
+  diff. Add any in-process plugin id to allow it; block-list to silence one.
+- **Path allow-list / block-list** (globs — `*`, `**`, trailing `/` for
+  folders), e.g. only `Projects/**`, or never `Templates/`.
+- **Per-file frontmatter** — skip files with `drift-inline: ignore`, or an
+  opt-in-only mode (`drift-inline: true`).
+
+> **Limitation:** the two CLI tools (Claudian, Claude Sidebar) both write via a
+> subprocess, so they appear as *external* and cannot be told apart from each
+> other deterministically. Per-plugin control is precise for **in-process**
+> plugins.
 
 ## How it works
 
