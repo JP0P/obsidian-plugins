@@ -14,12 +14,12 @@ Based on [Rollover Daily Todos v1.2.0](https://github.com/lumoe/obsidian-rollove
 ```
 # Objectives (today, after rollover):
 - [ ] Support Infra
-  - [x] Sync w/ michael on macros thing   <-- shouldn't be here, it's done!
+  - [x] Review the design doc   <-- shouldn't be here, it's done!
   - [ ] Work on lead-to-user flow
 
 # Recaps (today, after rollover):
 - Support Infra
-  - Sync w/ michael on macros thing        <-- duplicate
+  - Review the design doc        <-- duplicate
 ```
 
 **Example — after fix:**
@@ -30,7 +30,7 @@ Based on [Rollover Daily Todos v1.2.0](https://github.com/lumoe/obsidian-rollove
 
 # Recaps (today, after rollover):
 - Support Infra
-  - Sync w/ michael on macros thing        <-- only appears here
+  - Review the design doc        <-- only appears here
 ```
 
 ## Installation

@@ -25,7 +25,7 @@ Before (original plugin):
 [Asana](https://app.asana.com/1/123/project/456/task/789)
 
 After (with Asana token configured):
-[Migrate Blockbook Status Dashboard to TypeScript](https://app.asana.com/1/123/project/456/task/789)
+[Redesign the onboarding flow](https://app.asana.com/1/123/project/456/task/789)
 ```
 
 ## Settings

@@ -1,0 +1,20 @@
+{
+  "cycle-through-panes:focus-on-last-active-pane": [
+    { "modifiers": ["Ctrl"], "key": "Tab" }
+  ],
+  "cycle-through-panes:focus-on-last-active-pane-reverse": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "Tab" }
+  ],
+  "editor:swap-line-up": [
+    { "modifiers": ["Alt"], "key": "ArrowUp" }
+  ],
+  "editor:swap-line-down": [
+    { "modifiers": ["Alt"], "key": "ArrowDown" }
+  ],
+  "workspace:previous-tab": [
+    { "modifiers": ["Meta", "Shift"], "key": "[" }
+  ],
+  "workspace:next-tab": [
+    { "modifiers": ["Meta", "Shift"], "key": "]" }
+  ]
+}
